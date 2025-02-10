@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSV Clinic</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400;700&family=Lora:wght@400;700&family=DM+Sans:wght@400;700&family=Jost:wght@400;700&family=Pacifico&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@popmotion/popmotion@8.7.4/dist/popmotion.global.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #689287;
+      --secondary-color: #f7f4e9;
+      --tertiary-color: #cda434;
+      --quaternary-color: #cda274;
+      --white-color: #fff;
+
+      --primary-text: #000;
+      --secondary-text: #213721;
+      --tertiary-text: #bbd4ce;
+
+      --button-primary: #213721;
+    }
+
+    .custom-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 16px;
+      gap: 10px;
+      background: var(--button-primary);
+      box-shadow: 0px 10px 20px rgba(192, 192, 192, 0.35);
+      border-radius: 18px;
+      color: var(--tertiary-color);
+      font-family: 'Jost', sans-serif;
+      margin-left: auto;
+      margin-right: 100px;
+    }
+
+    .question-box {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: calc(100vh - 57px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95%;
+      max-width: 1200px;
+      background-color: var(--white-color);
+      border: 1px solid var(--tertiary-color);
+      border-radius: 50px;
+      padding: 14px 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .question-box .question-text {
+      font-family: 'Dancing Script', cursive;
+      color: var(--primary-text);
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .question-box form {
+      display: flex;
+      align-items: center;
+      width: 70%;
+    }
+
+    .question-box input {
+      flex: 1;
+      padding: 12px 25px;
+      background-color: var(--secondary-color);
+      border-radius: 50px;
+      font-family: 'Dancing Script', sans-serif;
+      font-size: 18px;
+    }
+
+    .support input {
+      background-color: var(--secondary-color);
+      border-radius: 50px;
+      font-family: 'Dancing Script', sans-serif;
+      font-size: 18px;
+      padding: 12px 20px;
+    }
+
+    .question-box button {
+      background: var(--button-primary);
+      box-shadow: 0px 10px 20px rgba(192, 192, 192, 0.35);
+      border-radius: 18px;
+      color: var(--tertiary-color);
+      font-family: 'Jost', sans-serif;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .question-box button:hover {
+      background: var(--quaternary-color);
+    }
+
+    .consultation-form input {
+      padding: 12px 20px;
+      background-color: var(--secondary-color);
+      font-family: 'Dancing Script', sans-serif;
+      font-size: 20px;
+    }
+
+    .consultation-form select {
+      padding: 12px 20px;
+      background-color: var(--secondary-color);
+      font-family: 'Dancing Script', sans-serif;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+  <!-- Header Section -->
+  <header class="relative bg-cover bg-center h-screen" style="background-image: url('images/home/home_bg_3.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 flex justify-between items-center p-6">
+      <div class="flex items-center space-x-2">
+        <img src="/images/home/logo_1.png" alt="Logo 1" class="h-16">
+        <img src="/images/home/logo_2.png" alt="Logo 2" class="h-8">
+      </div>
+      <nav class="flex space-x-6 text-white text-[20px] font-[playfair-display] mx-6">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="disease.html" class="hover:underline">Disease</a>
+        <a href="knowledge.html" class="hover:underline">Knowledge</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Question Section -->
+  <div class="question-box">
+    <div class="justify-center">
+      <p class="text-2xl font-bold question-text">Diabetes E-book</p>
+      <p class="text-base font-[playfair-display]">Understand the cause and cure to your diseases</p>
+    </div>
+    <form class="space-x-4">
+      <input type="text" placeholder="Enter phone number +91 ...">
+      <button type="submit">Download</button>
+    </form>
+  </div>
+
+  <!-- Section 1: Disease Details -->
+
+  <section class="bg-[#f7f4e9]">
+    <div class="max-w-8xl mx-auto pt-16 pb-6">
+      <div class="flex flex-col md:flex-row items-center gap-12 relative">
+
+        <!-- Left Section -->
+        <div class="md:w-3/4 relative z-10 bg-white p-4" style="border: 2px solid #cda434;">
+          <h2 class="text-5xl font-serif text-black-900 mb-4" style="font-family: 'Dancing Script', sans-serif;">Diet &
+            Nutrition</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Our personalized diet plans emphasize whole foods and balanced meals, integrating seamlessly with
+            medication regimens. Specializing in gut disorders and metabolic disorders like diabetes, high cholesterol,
+            and fatty liver, we create tailored nutritional strategies to manage and improve these conditions.
+          </p>
+
+          <section class="relative w-full flex flex-col items-center">
+            <div class="relative w-full flex justify-center items-center">
+              <div class="overflow-hidden w-[620px]">
+                <div id="slider"
+                  class="flex items-center justify-center transition-transform duration-500 ease-in-out gap-2">
+                  <img src="images/home/diet_image_1.png" class="slide-img big">
+                  <img src="images/home/diet_image_2.png" class="slide-img">
+                  <img src="images/home/diet_image_3.png" class="slide-img">
+                  <img src="images/home/diet_image_4.png" class="slide-img">
+                </div>
+              </div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div class="flex justify-between mt-4 w-full max-w-sm">
+              <button onclick="prevSlide()"
+                class="bg-[#689287] text-white px-4 py-2 rounded-full shadow-md">&lt;</button>
+              <div class="flex gap-2 h-1 w-40 bg-[#689287] mt-2" style="border-radius:4px ;"></div>
+              <button onclick="nextSlide()"
+                class="bg-[#689287] text-white px-4 py-2 rounded-full shadow-md">&gt;</button>
+            </div>
+          </section>
+
+          <style>
+            .slide-img {
+              width: 150px;
+              height: 140px;
+              /* Increased height */
+              object-fit: cover;
+              border-radius: 10px;
+              transition: all 0.5s ease-in-out;
+              position: relative;
+            }
+
+            .big {
+              width: 240px !important;
+              height: 200px !important;
+            }
+
+            #slider {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              /* Ensures everything is vertically centered */
+            }
+          </style>
+
+          <script>
+            let slider = document.getElementById('slider');
+            let images = slider.children;
+
+            function nextSlide() {
+              images[0].classList.remove('big'); // First image becomes small
+
+              setTimeout(() => {
+                let firstImage = images[0].cloneNode(true);
+                slider.appendChild(firstImage);
+                slider.removeChild(images[0]); // Remove first image and move it to end
+                images[0].classList.add('big'); // Next image in line becomes big
+              }, 500);
+            }
+
+            function prevSlide() {
+              let lastImage = images[images.length - 1].cloneNode(true);
+              lastImage.classList.remove('big'); // Make sure it's small when moved
+
+              slider.insertBefore(lastImage, images[0]); // Move last image to start
+              slider.removeChild(images[images.length - 1]);
+
+              setTimeout(() => {
+                images[0].classList.add('big'); // First image becomes big
+                images[1].classList.remove('big'); // Second image becomes small
+              }, 10);
+            }
+
+          </script>
+        </div>
+
+        <!-- Right Section (Small Previews) -->
+        <div class="md:w-1/2 flex gap-4">
+          <img src="images/home/diet_image_1.png" class="w-1/4 h-[150px] object-cover rounded-lg shadow-md">
+          <img src="images/home/diet_image_2.png" class="w-1/4 h-[150px] object-cover rounded-lg shadow-md">
+          <img src="images/home/diet_image_3.png" class="w-1/4 h-[150px] object-cover rounded-lg shadow-md">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Question 2 Form -->
+  <section class="w-full py-5 px-6 lg:px-20 support" style="background-color: var(--primary-color);">
+    <div class="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
+      <!-- Left Side -->
+      <div class="text-center lg:text-center mb-8 lg:mb-0 w-full lg:w-1/2">
+        <p class="text-lg text-white">
+          Doctor Jayasvi is here to help you with any queries you have regarding your disease. Feel free to drop your
+          query and we will solve it for free!
+        </p>
+      </div>
+
+      <!-- Right Side (Form Fields) -->
+      <div class="text-center lg:text-center w-full lg:w-1/4">
+        <p class="text-white text-2xl" style="font-family: 'Dancing Script';">Questions?</p>
+        <input type="text" placeholder="I am suffering from.." class="p-3 mt-1 rounded-lg w-full">
+        <button type="submit" class="custom-button mt-2" style="padding: 8px 24px !important; margin-left: 125px;">
+          Ask
+        </button>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Steps -->
+  <section class="py-4" style="background-color: var(--secondary-color);">
+    <div class="grid grid-cols-1 sm:grid-cols-5">
+      <!-- Step 1 -->
+      <div class="px-6 py-6 border-l border-black-300" style="border-right: 1px solid var(--tertiary-color);">
+        <h3 class="text-4xl font-semibold text-[#455324]" style="font-family: 'Dancing Script';">Step 1</h3>
+        <p class="text-sm mt-24">Book a Free Consultation</p>
+      </div>
+      <!-- Step 2 -->
+      <div class="px-6 py-6 border-l border-black-300" style="border-right: 1px solid var(--tertiary-color);">
+        <h3 class="text-4xl font-semibold text-[#455324]" style="font-family: 'Dancing Script';">Step 2</h3>
+        <p class="text-sm mt-24">Discuss your ailments in-depth and decide your course of treatment.</p>
+      </div>
+      <!-- Step 3 -->
+      <div class="px-6 py-6 border-l border-black-300" style="border-right: 1px solid var(--tertiary-color);">
+        <h3 class="text-4xl font-semibold text-[#455324]" style="font-family: 'Dancing Script';">Step 3</h3>
+        <p class="text-sm mt-24">Receive your personalized treatment protocol within 24 hours.</p>
+      </div>
+      <!-- Step 4 -->
+      <div class="px-6 py-6 border-l border-black-300" style="border-right: 1px solid var(--tertiary-color);">
+        <h3 class="text-4xl font-semibold text-[#455324]" style="font-family: 'Dancing Script';">Step 4</h3>
+        <p class="text-sm mt-24">Benefit from regular follow-ups to monitor progress.</p>
+      </div>
+      <!-- Step 5 -->
+      <div class="px-6 py-6 border-l border-black-300">
+        <h3 class="text-4xl font-semibold text-[#455324]" style="font-family: 'Dancing Script';">Step 5</h3>
+        <p class="text-sm mt-24">Positive Outcomes: Embrace your journey to self-vitality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Consultation Form -->
+  <section class="w-full bg-white-100 py-5 px-6 lg:px-20">
+    <div class="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
+      <!-- Left Side -->
+      <div class="text-center lg:text-center mb-8 lg:mb-0">
+        <p class="text-lg">
+          Request for a Free
+        </p>
+        <h3 class="text-5xl font-semibold mt-2" style="font-family: 'Dancing Script';">Consultation</h3>
+      </div>
+
+      <!-- Right Side (Form Fields) -->
+      <div class="consultation-form">
+        <!-- Row 1: Name, Email, Contact -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <input type="text" placeholder="Name" class="p-3 rounded-lg w-full">
+          <input type="email" placeholder="Email" class="p-3 rounded-lg w-full">
+          <input type="text" placeholder="Contact" class="p-3 rounded-lg w-full">
+        </div>
+
+        <!-- Row 2: Select disease, Date -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <select class="p-3 rounded-lg w-full">
+            <option>Select disease</option>
+          </select>
+          <input type="date" class="p-3 rounded-lg w-full">
+          <button type="submit" class="custom-button" style="padding: 10px 24px !important;">
+            Book Consultation →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex h-screen">
+    <div class="w-1/2 bg-[#F7F4E9] flex items-center justify-center relative">
+      <div id="mainVideoContainer" style="border: 2px solid #cda434;"
+        class="rounded-[50px] shadow-2xl overflow-hidden w-[425px] h-[250px] transition-transform duration-500 ease-in-out absolute right-8">
+        <video id="mainVideo" class="w-full h-full object-cover" controls autoplay>
+          <source src="https://videos.pexels.com/video-files/7944931/7944931-uhd_2732_1440_25fps.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="w-1/2 bg-[#689287] text-white p-4 flex flex-col justify-between relative">
+      <div class="relative flex items-center justify-between absolute -left-28 mb-4 top-12">
+        <div id="videoListTop" class="relative flex justify-center">
+
+        </div>
+        <h2 class="text-5xl font-normal mr-20" style="font-family: 'Dancing Script', sans-serif;">Testimonials</h2>
+      </div>
+
+      <div id="videoContent" class="text-left pl-4">
+        <h3 class="text-4xl italic mb-4" style="font-family: 'Dancing Script', sans-serif;">Savita’s story</h3>
+        <p class="text-[14px] leading-relaxed" style="line-height: 26px;">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since when an
+          unknown printer took a galley of type and scrambled.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Ea, eaque!
+        </p>
+      </div>
+
+      <div id="videoListBottom" class="relative absolute mt-4 bottom-12 -left-28">
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const videos = [
+      {
+        title: "Savita's Story",
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since when an unknown printer took a galley of type and scrambled. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eaque!",
+        src: "https://videos.pexels.com/video-files/7944931/7944931-uhd_2732_1440_25fps.mp4",
+      },
+      {
+        title: "John's Journey",
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since when an unknown printer took a galley of type and scrambled. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eaque!",
+        src: "https://videos.pexels.com/video-files/7033779/7033779-uhd_2560_1440_25fps.mp4",
+      },
+      {
+        title: "Anna's Experience",
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since when an unknown printer took a galley of type and scrambled. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eaque!",
+        src: "https://videos.pexels.com/video-files/4952990/4952990-hd_1920_1080_30fps.mp4",
+      }
+    ];
+
+    const videoListTop = document.getElementById('videoListTop');
+    const videoListBottom = document.getElementById('videoListBottom');
+    const mainVideo = document.getElementById('mainVideo');
+    const videoContent = document.getElementById('videoContent');
+
+    function renderVideos() {
+      videoListTop.innerHTML = '';
+      videoListBottom.innerHTML = '';
+
+      const topVideo = createThumbnail(videos[1]);
+      videoListTop.appendChild(topVideo);
+
+      const bottomVideo = createThumbnail(videos[2]);
+      videoListBottom.appendChild(bottomVideo);
+    }
+
+    function createThumbnail(video) {
+      const videoDiv = document.createElement('div');
+      videoDiv.className = "rounded-[50px]  overflow-hidden shadow-lg cursor-pointer transform transition-transform hover:scale-105 w-[300px] h-[170px] relative border-2 border-[#cda434]";
+      videoDiv.innerHTML = `
+          <video src="${video.src}" class="w-full h-full object-cover bg-white opacity-70" muted></video>
+      `;
+      videoDiv.onclick = () => switchVideo(video);
+      return videoDiv;
+    }
+
+    function switchVideo(video) {
+      const currentVideo = {
+          title: videoContent.querySelector('h3').textContent,
+          description: videoContent.querySelector('p').textContent,
+          src: mainVideo.querySelector('source').src
+      };
+
+      mainVideo.src = video.src;
+      mainVideo.play();
+
+      videoContent.innerHTML = `
+          <h3 class="text-4xl italic mb-4" style="font-family: 'Dancing Script', sans-serif;">${video.title}</h3>
+          <p class="text-[14px] leading-relaxed" style="line-height: 26px;">${video.description}</p>
+      `;
+
+      const index = videos.findIndex(v => v.src === video.src);
+      const nextIndex = (index + 1) % videos.length;
+      const prevIndex = (index - 1 + videos.length) % videos.length;
+
+      videoListTop.innerHTML = '';
+      videoListBottom.innerHTML = '';
+
+      videoListTop.appendChild(createThumbnail(videos[prevIndex]));
+      videoListBottom.appendChild(createThumbnail(videos[nextIndex]));
+    }
+
+    renderVideos();
+  </script>
+
+  <!-- FAQ Section -->
+  <section class="py-16" style="background-color: var(--secondary-color); border-top: 2px solid #cda434 ;">
+    <div class="container mx-auto px-4">
+      <h2 class="text-center text-4xl font-semibold text-black-900" style="font-family: 'Dancing Script';">FAQ</h2>
+      <p class="text-center text-black mt-2 font-[playfair-display]">Lorem Ipsum is simply dummy text of the printing
+        and</p>
+
+      <div class="mt-8 space-y-1">
+        <!-- FAQ Item -->
+        <div class="border rounded-md overflow-hidden">
+          <button style="background-color: var(--primary-color); font-family: 'Dancing Script';"
+            class="w-full text-left px-7 py-3 text-white flex justify-between items-center text-2xl">
+            How does natural healing work?
+            <span class="text-yellow-700">▼</span>
+          </button>
+          <div class="px-7 py-3 bg-white text-black-800 hidden font-[playfair-display]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the when an unknown printer took a galley of type.
+          </div>
+        </div>
+
+        <div class="border rounded-md overflow-hidden">
+          <button style="background-color: var(--primary-color); font-family: 'Dancing Script';"
+            class="w-full text-left px-7 py-3 text-white flex justify-between items-center text-2xl">
+            How does natural healing work?
+            <span class="text-yellow-700">▼</span>
+          </button>
+          <div class="px-7 py-3 bg-white text-black-800 hidden font-[playfair-display]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the when an unknown printer took a galley of type.
+          </div>
+        </div>
+
+        <div class="border rounded-md overflow-hidden">
+          <button style="background-color: var(--primary-color); font-family: 'Dancing Script';"
+            class="w-full text-left px-7 py-3 text-white flex justify-between items-center text-2xl">
+            How does natural healing work?
+            <span class="text-yellow-700">▼</span>
+          </button>
+          <div class="px-7 py-3 bg-white text-black-800 hidden font-[playfair-display]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the when an unknown printer took a galley of type.
+          </div>
+        </div>
+
+        <div class="border rounded-md overflow-hidden">
+          <button style="background-color: var(--primary-color); font-family: 'Dancing Script';"
+            class="w-full text-left px-7 py-3 text-white flex justify-between items-center text-2xl">
+            How does natural healing work?
+            <span class="text-yellow-700">▼</span>
+          </button>
+          <div class="px-7 py-3 bg-white text-black-800 hidden font-[playfair-display]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the when an unknown printer took a galley of type.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section (Optional) -->
+  <footer class="bg-cover bg-center text-white" style="background-image: url('images/footer/footer_bg.png');">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <div class="flex flex-col md:flex-row justify-between gap-20">
+        <!-- Left Section -->
+        <div class="mb-8 md:mb-0">
+          <img src="/images/footer/footer_logo.png" alt="JSV Clinic Logo" style="width: 300px; height: 260px;">
+        </div>
+        <!-- Right Section -->
+        <div class="flex-1">
+          <!-- Top Section -->
+          <div class="flex justify-between mb-4">
+            <div class="flex-1">
+              <p class="text-5xl font-semibold mb-2" style="font-family: 'Dancing Script';">Journey to Self Vitality.
+              </p>
+            </div>
+            <div class="flex items-center">
+              <button class="custom-button" style="margin-right: 0px !important;">Book Consultation →</button>
+            </div>
+          </div>
+          <div class="border-t border-white-900 my-4"></div>
+          <!-- Bottom Section -->
+          <div class="flex justify-between">
+            <div>
+              <div class="d-flex space-x-6">
+                <a href="disease.html" class="hover:underline"><u>Disease</u></a>
+                <a href="knowledge.html" class="hover:underline"><u>Knowledge</u></a>
+              </div>
+              <div class="flex space-x-4 mt-4">
+                <a href="#"><img src="images/footer/facebook.png" alt="Icon" class="w-6 h-6"></a>
+                <a href="#"><img src="images/footer/twitter.png" alt="Icon" class="w-6 h-6"></a>
+                <a href="#"><img src="images/footer/instagram.png" alt="Icon" class="w-6 h-6"></a>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="font-semibold mb-1 text-center">CONTACT US</p>
+              <div class="flex items-center mt-2 mb-2">
+                <img src="images/footer/phone.png" alt="Phone Icon" class="w-8 h-8 mr-2">
+                <p class="text-sm">+1 800 854-36-80</p>
+              </div>
+              <div class="flex items-center">
+                <img src="images/footer/mail.png" alt="Email Icon" class="w-8 h-8 mr-2">
+                <p class="text-sm">support@figma.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Divider -->
+      <div class="border-t border-white-700 my-4"></div>
+      <!-- Copyright Text -->
+      <p class="text-center text-sm">&copy; 2025 JSV Clinics. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        content.classList.toggle('hidden');
+        button.querySelector('span').textContent = content.classList.contains('hidden') ? '▼' : '▲';
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

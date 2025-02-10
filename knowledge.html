@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSV Clinic</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400;700&family=Lora:wght@400;700&family=DM+Sans:wght@400;700&family=Jost:wght@400;700&family=Pacifico&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary-color: #689287;
+      --secondary-color: #f7f4e9;
+      --tertiary-color: #cda434;
+      --quaternary-color: #cda274;
+      --white-color: #fff;
+
+      --primary-text: #000;
+      --secondary-text: #213721;
+      --tertiary-text: #bbd4ce;
+
+      --button-primary: #213721;
+    }
+
+    .custom-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 16px;
+      gap: 10px;
+      background: var(--button-primary);
+      box-shadow: 0px 10px 20px rgba(192, 192, 192, 0.35);
+      border-radius: 18px;
+      color: var(--tertiary-color);
+      font-family: 'Jost', sans-serif;
+      margin-left: auto;
+      margin-right: 100px;
+    }
+
+    .question-box {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: calc(100vh - 57px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95%;
+      max-width: 1200px;
+      background-color: var(--white-color);
+      border: 1px solid var(--tertiary-color);
+      border-radius: 50px;
+      padding: 14px 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .question-box .question-text {
+      font-family: 'Dancing Script', cursive;
+      color: var(--primary-text);
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .question-box form {
+      display: flex;
+      align-items: center;
+      width: 75%;
+    }
+
+    .question-box input {
+      flex: 1;
+      padding: 12px 25px;
+      background-color: var(--secondary-color);
+      border-radius: 50px;
+      font-family: 'Dancing Script', sans-serif;
+      font-size: 18px;
+    }
+
+    .question-box button {
+      background: var(--button-primary);
+      box-shadow: 0px 10px 20px rgba(192, 192, 192, 0.35);
+      border-radius: 18px;
+      color: var(--tertiary-color);
+      font-family: 'Jost', sans-serif;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .question-box button:hover {
+      background: var(--quaternary-color);
+    }
+
+    .blogs h2 {
+      font-family: 'Times New Roman', sans-serif;
+    }
+
+    .ebooks .ac {
+      background-color: var(--secondary-color);
+      border-radius: 50px;
+      font-family: 'Dancing Script', sans-serif;
+      font-size: 18px;
+      padding: 12px 20px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+  <!-- Header Section -->
+  <header class="relative bg-cover bg-center h-screen" style="background-image: url('images/home/home_bg_2.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 flex justify-between items-center p-6">
+      <div class="flex items-center space-x-2">
+        <img src="/images/home/logo_1.png" alt="Logo 1" class="h-16">
+        <img src="/images/home/logo_2.png" alt="Logo 2" class="h-8">
+      </div>
+      <nav class="flex space-x-6 text-white text-[20px] font-[playfair-display] mx-6">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="disease.html" class="hover:underline">Disease</a>
+        <a href="knowledge.html" class="hover:underline">Knowledge</a>
+      </nav>
+    </div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center w-full">
+      <p class="mb-4 font-[Lora] text-8xl" style="font-family: 'Dancing Script';">Welcome to the knowledge den</p>
+    </div>
+  </header>
+
+  <!-- Question Section -->
+  <div class="question-box">
+    <div class="justify-center">
+      <p class="text-2xl font-bold question-text">Questions?</p>
+      <p class="text-base font-[playfair-display]">Ask your disease-related queries</p>
+    </div>
+    <form class="space-x-4">
+      <input type="text" placeholder="I am suffering from ...">
+      <button type="submit">Ask</button>
+    </form>
+  </div>
+
+  <!-- Education Videos -->
+  <section class="flex flex-col items-center bg-[#F7F4E9] pt-16 pb-3">
+    <div class="flex w-full max-w-8xl">
+      <!-- Left Content -->
+      <div class="w-1/4 flex flex-col justify-center px-20">
+        <p class="text-3xl text-gray-700 w-56" style="font-family: 'Dancing Script';">
+          Gain the knowledge to find, understand and treat your problems.
+        </p>
+      </div>
+
+      <!-- Right Content -->
+      <div class="w-3/4 flex flex-col items-center p-4 bg-white">
+        <div class="grid grid-cols-4 gap-5">
+          <div class="relative">
+            <img src="images/home/education_1.png" class="shadow-lg">
+            <span class="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold"
+              style="font-family: 'Dancing Script';">Video's</span>
+          </div>
+          <div class="relative">
+            <img src="images/home/education_2.png" class="shadow-lg">
+            <span class="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold"
+              style="font-family: 'Dancing Script';">Blog's</span>
+          </div>
+          <div class="relative">
+            <img src="images/home/education_3.png" class="shadow-lg">
+            <span class="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold"
+              style="font-family: 'Dancing Script';">E-Book's</span>
+          </div>
+          <div class="relative">
+            <img src="images/home/education_4.png" class="shadow-lg">
+            <span class="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold"
+              style="font-family: 'Dancing Script';">Workshops</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Educational Videos Section -->
+    <h2 class="text-5xl mb-4 font-[300] text-center mt-5" style="font-family: 'Dancing Script';">Educational videos</h2>
+
+    <!-- Slider -->
+    <div class="relative w-full max-w-5xl mt-1">
+      <div class="flex items-center justify-center">
+        <button id="prev" class="text-yellow-600 text-8xl">&#x2190;</button>
+        <div class="relative flex items-center overflow-hidden w-full h-64">
+          <div id="video-slider" class="flex transition-transform duration-300 ease-in-out items-center justify-center">
+          </div>
+        </div>
+        <button id="next" class="text-yellow-600 text-8xl">&#x2192;</button>
+      </div>
+    </div>
+
+    <!-- Blogs Section -->
+    <h2 class="text-5xl font-bold mt-6 text-center" style="font-family: 'Dancing Script';">Blogs</h2>
+  </section>
+
+  <!-- Blog Section -->
+
+  <section class="grid grid-cols-12 gap-0 blogs pt-4 pb-10 bg-[#F9F4EC]" style="border-top: 3px solid #CDA434">
+    <!-- Row 1 -->
+    <article class="col-span-2 bg-white overflow-hidden p-3 h-auto">
+      <h2 class="text-2xl font-bold">Lorem ipsum dolor sit amet, consectetur...</h2>
+      <p class="text-gray-600 mt-6 text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet tempor
+        nunc maecenas cras ipsum, lorem massa lacus...</p>
+      <div class="flex items-center mt-8">
+        <img class="w-10 h-10 rounded-lg" src="https://i.pravatar.cc/40" alt="author">
+        <div class="ml-3">
+          <p class="font-semibold text-[14px]">Husni Ramdani</p>
+          <p class="text-gray-500 text-[10px]">30 November 2021</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="col-span-2 bg-white overflow-hidden h-auto">
+      <img src="images/home/blog_1.png" alt="Thumbnail" class="mb-4">
+      <h2 class="text-2xl font-bold px-2">Lorem ipsum dolor sit amet, consectetur...</h2>
+    </article>
+
+    <article class="col-span-2 bg-[#F9F4EC] overflow-hidden p-3 h-60">
+      <img src="images/home/blog_2.png" alt="Thumbnail" class="mb-4">
+      <h2 class="text-lg font-bold">Lorem ipsum dolor sit amet, consectetur...</h2>
+      <p class="text-[12px] text-red-500 mt-3">By Husni Ramdani</p>
+    </article>
+
+    <article class="col-span-2 bg-white overflow-hidden p-3 h-auto">
+      <h2 class="text-2xl font-bold">Lorem ipsum dolor sit amet, consectetur...</h2>
+      <p class="text-gray-600 mt-5 text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet tempor
+        nunc maecenas cras ipsum, lorem massa lacus...</p>
+      <div class="flex items-center mt-4">
+        <img class="w-10 h-10 rounded-lg" src="https://i.pravatar.cc/40" alt="author">
+        <div class="ml-3">
+          <p class="font-semibold text-[14px]">Husni Ramdani</p>
+          <p class="text-gray-500 text-[10px]">30 November 2021</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="col-span-2 bg-[#F9F4EC] overflow-hidden p-3 h-auto">
+      <h2 class="text-2xl font-bold">Lorem ipsum dolor sit amet, consectetur...</h2>
+      <p class="text-gray-600 mt-8 text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet tempor
+        nunc maecenas cras ipsum, lorem massa lacus...</p>
+      <div class="flex items-center mt-10">
+        <img class="w-10 h-10 rounded-lg" src="https://i.pravatar.cc/40" alt="author">
+        <div class="ml-3">
+          <p class="font-semibold text-[14px]">Husni Ramdani</p>
+          <p class="text-gray-500 text-[10px]">30 November 2021</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="col-span-2 bg-white overflow-hidden p-3 h-60">
+      <img src="images/home/blog_2.png" alt="Thumbnail" class="mb-4">
+      <h2 class="text-lg font-bold">Lorem ipsum dolor sit amet, consectetur...</h2>
+      <p class="text-[12px] text-red-500 mt-3">By Husni Ramdani</p>
+    </article>
+
+    <!-- Row 2 -->
+
+    <article class="col-span-2 bg-[#F9F4EC] overflow-hidden p-3 h-auto mt-0">
+      <h2 class="text-2xl font-bold">Lorem ipsum dolor sit amet, consectetur...</h2>
+      <p class="text-gray-600 my-8 text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet tempor
+        nunc maecenas cras ipsum, lorem massa lacus...</p>
+    </article>
+
+    <article class="col-span-2 bg-white overflow-hidden px-2 h-auto -mt-10">
+      <p class="text-gray-600 mt-8 text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet tempor
+        nunc maecenas cras ipsum, lorem massa lacus...</p>
+      <div class="flex items-center mt-10">
+        <img class="w-10 h-10 rounded-lg" src="https://i.pravatar.cc/40" alt="author">
+        <div class="ml-3">
+          <p class="font-semibold text-[14px]">Husni Ramdani</p>
+          <p class="text-gray-500 text-[10px]">30 November 2021</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="col-span-2 bg-white overflow-hidden p-3 h-auto -mt-14">
+      <img src="images/home/blog_3.png" alt="Thumbnail" class="mb-4">
+      <h2 class="text-lg font-bold">Lorem ipsum dolor sit amet, consectetur...</h2>
+      <p class="text-gray-600 mt-3 text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet lorem
+        massa lacus...</p>
+      <p class="text-[12px] text-red-500 mt-6">By Husni Ramdani</p>
+    </article>
+
+    <article class="col-span-2 bg-[#F9F4EC] overflow-hidden p-3 h-auto -mt-6">
+      <h2 class="text-2xl font-bold">Lorem ipsum dolor sit amet, consectetur...</h2>
+      <p class="text-gray-600 mt-3 text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet tempor
+        nunc maecenas cras ipsum, lorem massa lacus...</p>
+      <div class="flex items-center mt-5">
+        <img class="w-10 h-10 rounded-lg" src="https://i.pravatar.cc/40" alt="author">
+        <div class="ml-3">
+          <p class="font-semibold text-[14px]">Husni Ramdani</p>
+          <p class="text-gray-500 text-[10px]">30 November 2021</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="col-span-2 bg-white overflow-hidden p-0 h-auto mt-0">
+      <h2 class="text-2xl font-bold w-48">Lorem ipsum dolor sit amet, consectetur...</h2>
+      <p class="text-gray-600 mt-10 text-[12px] w-52">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
+        lorem massa lacus...</p>
+    </article>
+
+    <article class="col-span-2 bg-[#F9F4EC] overflow-hidden p-3 h-auto -mt-14">
+      <img src="images/home/blog_3.png" alt="Thumbnail" class="mb-2">
+      <h2 class="text-lg font-bold">Lorem ipsum dolor sit amet, consectetur...</h2>
+      <p class="text-gray-600 mt-2 text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet lorem
+        massa lacus...</p>
+      <p class="text-[12px] text-red-500 mt-2">By Husni Ramdani</p>
+    </article>
+  </section>
+
+  <!-- Ebooks Section -->
+
+  <section class="flex bg-gray-100 ebooks" style="border-top: 3px solid #CDA434;">
+    <!-- Left Sidebar (30%) -->
+    <div class="bg-[#F9F4EC] p-6" style="width: 25%;">
+
+      <select class="w-full p-2 rounded-md text-gray-500 text-[12px]"
+        style="border: 1px solid #CDA434; font-family: 'Pacifico', sans-serif;">
+        <option>Select disease</option>
+      </select>
+
+
+      <div class="space-y-2 mt-2 flex items-center justify-center flex-col">
+        <!-- First Box (small) -->
+        <div class="relative bg-white flex items-center justify-center"
+          style="width: 110px; height: 130px; border: 1px solid #CDA434; font-family: 'Pacifico', sans-serif;">
+          <span class="absolute -left-6 text-[14px] -rotate-90 text-green-900 font-bold">— Gastritis —</span>
+        </div>
+
+        <!-- Middle Box (large) -->
+        <div class="relative bg-white flex items-center justify-center"
+          style="width: 150px; height: 150px; border: 1px solid #CDA434; font-family: 'Pacifico', sans-serif;">
+          <span class="absolute -left-6 text-[14px] -rotate-90 text-green-900 font-bold">— Diabetes —</span>
+        </div>
+
+        <!-- Third Box (small) -->
+        <div class="relative bg-white flex items-center justify-center"
+          style="width: 110px; height: 130px; border: 1px solid #CDA434; font-family: 'Pacifico', sans-serif;">
+          <span class="absolute -left-5 text-[14px] -rotate-90 text-green-900 font-bold">— PCOS —</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Content (70%) -->
+    <div class="bg-[#689287] p-10 text-white" style="width: 75%;">
+      <h2 class="text-5xl font-bold mb-4 text-center" style="font-family: 'Dancing Script';">E-Books</h2>
+      <h3 class="text-3xl mt-8" style="font-family: 'Dancing Script';">Diabetes</h3>
+      <p class="mt-6 text-sm text-justify">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+        the industry's standard dummy text ever since the when an unknown printer took a galley of type
+        and scrambled m Ipsum has been the industry's standard dummy text ever since the when an unknown
+        printer took a galley of type and scrambled Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Itaque nihil consequatur assumenda laboriosam et tenetur fugit! Voluptatum laudantium
+        voluptatibus dolores illum itaque assumenda eos! Incidunt, eius. Et officiis voluptatibus nisi!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam illo molestiae tempore debitis
+        voluptatibus sunt consequuntur, rerum eius dolor velit incidunt laborum corporis officiis deserunt
+        excepturi. Recusandae illum molestiae facilis!
+      </p>
+
+      <!-- Mobile Input & Button -->
+      <div class="flex items-center mt-20 space-x-4 justify-end">
+        <div class="flex bg-cream text-gray-700 rounded-full ac px-4 py-2 gap-6">
+          <span class="font-bold">91+</span>
+          <input type="text" placeholder="Enter phone number" class="bg-transparent ml-2 outline-none" />
+        </div>
+        <button class="custom-button">Download</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-8 py-8 bg-[#F9F4EC]" style="border-top: 3px solid #CDA434">
+    <h2 class="text-5xl font-bold text-center" style="font-family: 'Dancing Script';">Workshop’s</h2>
+
+    <div class="max-w-8xl mx-auto flex gap-6 mt-3">
+      <!-- Left Section -->
+      <div class="w-3/4 bg-white py-6 shadow-md relative" style="border: 1px solid #CDA434;">
+        <div class="flex items-center">
+          <div class="w-3/4 bg-[#689287] py-20 px-4 text-3xl text-white" style="font-family: 'Dancing Script';">
+            “Diabetes reversal workshop”</div>
+          <div class="w-3/4 relative">
+            <img src="images/home/workshop.png" alt="Workshop"
+              class="w-full shadow-md rounded-md absolute -top-10 right-6">
+          </div>
+        </div>
+        <p class="text-4xl font-serif m-16 mb-24" style="font-family: 'Dancing Script';">Duration - 3 days</p>
+        <p class="m-6 text-gray-600 text-[14px] mr-10 text-justify">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+          been the industry's standard dummy text ever since the when an unknown printer took a galley of
+          type and scrambled m Ipsum has been the industry's standard dummy text ever since the when an
+          unknown printer took a galley of type and scrambled. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. <br><br>
+
+          Voluptatem unde numquam quibusdam iure sunt accusamus maxime optio perferendis
+          non exercitationem sapiente eligendi, ullam vitae praesentium hic quam. Odio, delectus excepturi.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro molestiae fuga, amet vitae hic
+          repellendus, veniam nisi neque quo, quia doloribus. Eaque ut voluptas cumque expedita neque odio,
+          itaque nemo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae dolore totam odio
+          ullam modi eum quia enim quas eveniet voluptatem?
+        </p>
+        <div class="flex justify-between items-center mt-6 w-1/4 mx-auto">
+          <p class="text-xl font-serif">500/-</p>
+          <button class="custom-button px-8">Join</button>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="w-1/4">
+        <h2 class="text-3xl font-bold text-center" style="font-family: 'Dancing Script';">Upcoming Workshop’s</h2>
+
+        <div class="bg-[#689287] py-3 px-6 shadow-md text-center mt-3" style="border: 1px solid #CDA434;">
+          <div class="text-white text-2xl mb-2" style="font-family: 'Dancing Script';">Hypertension solution</div>
+          <img src="images/home/workshop.png" alt="Workshop" class="w-full rounded-md mb-2 h-40">
+          <p class="text-white">VIEW MORE .....</p>
+          <div class="flex justify-between items-center mt-2">
+            <p class="text-2xl font-serif text-white">500/-</p>
+            <button class="custom-button px-8" style="margin-right: 0 !important;">Join</button>
+          </div>
+        </div>
+
+        <div class="bg-[#689287] py-3 px-6 shadow-md text-center mt-3" style="border: 1px solid #CDA434;">
+          <div class="text-white text-2xl mb-2" style="font-family: 'Dancing Script';">Hypertension solution</div>
+          <img src="images/home/workshop.png" alt="Workshop" class="w-full rounded-md mb-2 h-40">
+          <p class="text-white">VIEW MORE .....</p>
+          <div class="flex justify-between items-center mt-2">
+            <p class="text-2xl font-serif text-white">500/-</p>
+            <button class="custom-button px-8" style="margin-right: 0 !important;">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section (Optional) -->
+  <footer class="bg-cover bg-center text-white" style="background-image: url('images/footer/footer_bg.png');">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <div class="flex flex-col md:flex-row justify-between gap-20">
+        <!-- Left Section -->
+        <div class="mb-8 md:mb-0">
+          <img src="/images/footer/footer_logo.png" alt="JSV Clinic Logo" style="width: 300px; height: 260px;">
+        </div>
+        <!-- Right Section -->
+        <div class="flex-1">
+          <!-- Top Section -->
+          <div class="flex justify-between mb-4">
+            <div class="flex-1">
+              <p class="text-5xl font-semibold mb-2" style="font-family: 'Dancing Script';">Find inner balance , elevate
+                wellness</p>
+            </div>
+            <div class="flex items-center">
+              <button class="custom-button" style="margin-right: 0px !important;">Book Consultation →</button>
+            </div>
+          </div>
+          <div class="border-t border-white-900 my-4"></div>
+          <!-- Bottom Section -->
+          <div class="flex justify-between">
+            <div>
+              <div class="d-flex space-x-6">
+                <a href="disease.html" class="hover:underline"><u>Disease</u></a>
+                <a href="knowledge.html" class="hover:underline"><u>Knowledge</u></a>
+              </div>
+              <div class="flex space-x-4 mt-4">
+                <a href="#"><img src="images/footer/facebook.png" alt="Icon" class="w-6 h-6"></a>
+                <a href="#"><img src="images/footer/twitter.png" alt="Icon" class="w-6 h-6"></a>
+                <a href="#"><img src="images/footer/instagram.png" alt="Icon" class="w-6 h-6"></a>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="font-semibold mb-1 text-center">CONTACT US</p>
+              <div class="flex items-center mt-2 mb-2">
+                <img src="images/footer/phone.png" alt="Phone Icon" class="w-8 h-8 mr-2">
+                <p class="text-sm">+1 800 854-36-80</p>
+              </div>
+              <div class="flex items-center">
+                <img src="images/footer/mail.png" alt="Email Icon" class="w-8 h-8 mr-2">
+                <p class="text-sm">support@figma.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Divider -->
+      <div class="border-t border-white-700 my-4"></div>
+      <!-- Copyright Text -->
+      <p class="text-center text-sm">&copy; 2025 JSV Clinics. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slider = document.getElementById("video-slider");
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+      const videoSources = [
+        "https://videos.pexels.com/video-files/7944931/7944931-uhd_2732_1440_25fps.mp4",
+        "https://videos.pexels.com/video-files/7033779/7033779-uhd_2560_1440_25fps.mp4",
+        "https://videos.pexels.com/video-files/4952990/4952990-hd_1920_1080_30fps.mp4",
+        "https://videos.pexels.com/video-files/6890305/6890305-uhd_2560_1440_30fps.mp4",
+        "https://videos.pexels.com/video-files/8363903/8363903-hd_1920_1080_30fps.mp4",
+        "https://videos.pexels.com/video-files/8997223/8997223-hd_1920_1080_30fps.mp4"
+      ];
+
+      let index = 0;
+
+      function createVideoElements() {
+        slider.innerHTML = "";
+        for (let i = 0; i < 3; i++) {
+          const videoIndex = (index + i) % videoSources.length;
+          const div = document.createElement("div");
+          div.className = i === 1 ? "p-2 transition-all relative" : "p-2 transition-all relative -top-3";
+          div.style.width = i === 1 ? "50%" : "25%";
+          div.style.opacity = i === 1 ? "1" : "0.7";
+          div.style.transform = i === 1 ? "scale(1)" : "scale(1) translateY(20px)";
+          div.style.zIndex = i === 1 ? "10" : "5";
+          div.innerHTML = `<video src="${videoSources[videoIndex]}" class="rounded-lg w-full" ${i == 1 ? 'controls' : ''}></video>`;
+          slider.appendChild(div);
+        }
+      }
+
+      function updateSlider(direction) {
+        if (direction === "next") {
+          index = (index + 1) % videoSources.length;
+        } else {
+          index = (index - 1 + videoSources.length) % videoSources.length;
+        }
+        createVideoElements();
+      }
+
+      prevBtn.addEventListener("click", () => updateSlider("prev"));
+      nextBtn.addEventListener("click", () => updateSlider("next"));
+
+      createVideoElements();
+    });
+  </script>
+
+</body>
+
+</html>
